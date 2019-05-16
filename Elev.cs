@@ -8,10 +8,10 @@ namespace WindowsFormsApp2
 {
     public class Elev : IComparable, IEquatable<Elev>
     {
-        public Elev(String nume, String prenume, long varsta)
+        public Elev(String nume, String gen, long varsta)
         {
             Nume = nume;
-            Prenume = prenume;
+            Gen = gen;
             Varsta = varsta;
         }
 
@@ -26,7 +26,7 @@ namespace WindowsFormsApp2
 
             if (Nume == other.Nume)
             {
-                if (Prenume == other.Prenume)
+                if (Gen == other.Gen)
                 {
                     if (Varsta == other.Varsta)
                     {
@@ -70,7 +70,7 @@ namespace WindowsFormsApp2
         }
 
         String Nume { get; set; }
-        String Prenume { get; set; }
+        String Gen { get; set; }
         long Varsta { get; set; }
     }
 }
