@@ -8,11 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
-    public partial class DeleteForm : Form
+    public partial class DeleteForm : MetroForm
     {
         MainForm parent;
 
@@ -25,11 +26,11 @@ namespace WindowsFormsApp2
             parent = p;
             InitializeComponent();
 
-            checkBoxNume.Checked = false;
-            comboBoxNume.Enabled = false;
+            nameCheckBox.Checked = false;
+            nameComboBox.Enabled = false;
 
-            checkBoxVarsta.Checked = false;
-            comboBoxVarsta.Enabled = false;
+            ageCheckBox.Checked = false;
+            ageComboBox.Enabled = false;
         }
 
 
@@ -41,8 +42,8 @@ namespace WindowsFormsApp2
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                comboBoxNume.Items.Add(dt.Rows[i]["nume"]);
-                comboBoxVarsta.Items.Add(dt.Rows[i]["varsta"]);
+                nameComboBox.Items.Add(dt.Rows[i]["Name"]);
+                ageComboBox.Items.Add(dt.Rows[i]["Age"]);
             }
         }
 
@@ -50,8 +51,8 @@ namespace WindowsFormsApp2
         {
             con.Open();
 
-            string numeText = comboBoxNume.GetItemText(comboBoxNume.SelectedItem);
-            string varstaText = comboBoxVarsta.GetItemText(comboBoxVarsta.SelectedItem);
+            string numeText = nameComboBox.GetItemText(nameComboBox.SelectedItem);
+            string varstaText = ageComboBox.GetItemText(ageComboBox.SelectedItem);
 
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -59,20 +60,20 @@ namespace WindowsFormsApp2
             MySqlCommand cmd1 = con.CreateCommand();
             cmd1.CommandType = CommandType.Text;
 
-            if(checkBoxNume.Checked == true)
+            if(nameCheckBox.Checked == true)
             {
-                checkBoxVarsta.Checked = false;
-                cmd1.CommandText = "delete from elev where nume = '" + numeText + "'";
+                ageCheckBox.Checked = false;
+                cmd1.CommandText = "delete from elev where Name = '" + numeText + "'";
                 cmd1.ExecuteNonQuery();
             }
-            if(checkBoxVarsta.Checked == true)
+            if(ageCheckBox.Checked == true)
             {
-                checkBoxNume.Checked = false;
-                cmd.CommandText = "delete from elev where varsta = '" + varstaText + "'";
+                nameCheckBox.Checked = false;
+                cmd.CommandText = "delete from elev where Age = '" + varstaText + "'";
                 cmd.ExecuteNonQuery();
             }
 
-            parent.DisplayElev();
+            parent.DisplayStudent();
 
             con.Close();
 
@@ -87,37 +88,37 @@ namespace WindowsFormsApp2
 
         private void CheckBoxNume_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxNume.Checked == true)
+            if (nameCheckBox.Checked == true)
             {
-                checkBoxVarsta.Checked = false;
-                comboBoxNume.Enabled = true;
-                comboBoxVarsta.Enabled = false;
-                comboBoxNume.SelectedIndex = 0;
-                comboBoxNume.DropDownStyle = ComboBoxStyle.DropDownList;
-                comboBoxVarsta.SelectedIndex = comboBoxNume.SelectedIndex;
+                ageCheckBox.Checked = false;
+                nameComboBox.Enabled = true;
+                ageComboBox.Enabled = false;
+                nameComboBox.SelectedIndex = 0;
+                nameComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                ageComboBox.SelectedIndex = nameComboBox.SelectedIndex;
             }
-            if(checkBoxNume.Checked == false)
+            if(nameCheckBox.Checked == false)
             {
-                comboBoxVarsta.Enabled = true;
-                comboBoxNume.Enabled = false;
+                ageComboBox.Enabled = true;
+                nameComboBox.Enabled = false;
             }
         }
 
-        private void checkBoxVarsta_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxVarsta_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxVarsta.Checked == true)
+            if (ageCheckBox.Checked == true)
             {
-                checkBoxNume.Checked = false;
-                comboBoxVarsta.Enabled = true;
-                comboBoxNume.Enabled = false;
-                comboBoxVarsta.SelectedIndex = 0;
-                comboBoxVarsta.DropDownStyle = ComboBoxStyle.DropDownList;
-                comboBoxNume.SelectedIndex = comboBoxVarsta.SelectedIndex;
+                nameCheckBox.Checked = false;
+                ageComboBox.Enabled = true;
+                nameComboBox.Enabled = false;
+                ageComboBox.SelectedIndex = 0;
+                ageComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                nameComboBox.SelectedIndex = ageComboBox.SelectedIndex;
             }
-            if(checkBoxVarsta.Checked == false)
+            if(ageCheckBox.Checked == false)
             {
-                comboBoxVarsta.Enabled = false;
-                comboBoxNume.Enabled = true;
+                ageComboBox.Enabled = false;
+                nameComboBox.Enabled = true;
             }
         }
     }
