@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MetroFramework.Forms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class SearchForm : Form
+    public partial class SearchForm : MetroForm
     {
         MainForm parent;
 
@@ -34,13 +35,13 @@ namespace WindowsFormsApp2
 
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " select * from elev where Nume = '" + searchAfterName.Text + "'";
+            cmd.CommandText = " select * from elev where Name = '" + searchAfterName.Text + "'";
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
             MySqlDataAdapter sqlData = new MySqlDataAdapter(cmd);
             sqlData.Fill(dt);
-            parent.dataGridView1.DataSource = dt;
+            parent.metroGrid1.DataSource = dt;
 
             con.Close();
 

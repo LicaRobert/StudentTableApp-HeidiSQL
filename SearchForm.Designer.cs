@@ -83,7 +83,6 @@
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.cancelBtn);
             this.Name = "SearchForm";
-            this.Text = "SearchForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

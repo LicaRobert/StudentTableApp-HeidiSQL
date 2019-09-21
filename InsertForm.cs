@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MetroFramework.Forms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,17 +12,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class InsertForm : Form
+    public partial class InsertForm : MetroForm
     {
         MainForm parent;
-        GrupaElevi proElite;
+        StudentsGroup proElite;
         String gender = "";
 
         public InsertForm(MainForm p)
         {
             parent = p;
             InitializeComponent();
-            proElite = new GrupaElevi();
+            proElite = new StudentsGroup();
         }
 
         MySqlConnection con = new MySqlConnection("server=localhost;user=root;password=ProElite;database=elevVS");
@@ -32,27 +33,27 @@ namespace WindowsFormsApp2
         }
 
 
-        private void radioMaleButton_CheckedChanged(object sender, EventArgs e)
+        private void RadioMaleButton_CheckedChanged(object sender, EventArgs e)
         {
             gender = "M";
         }
 
-        private void radioFemaleButton_CheckedChanged(object sender, EventArgs e)
+        private void RadioFemaleButton_CheckedChanged(object sender, EventArgs e)
         {
             gender = "F";
         }
 
-        private void AdaugaNume(object sender, EventArgs e)
+        private void InsertName(object sender, EventArgs e)
         {
-            numeTextBox.Text = "";
+            nameTextBox.Text = "";
         }
 
-        private void AdaugaVarsta(object sender, EventArgs e)
+        private void InsertAge(object sender, EventArgs e)
         {
-            varstaTextBox.Text = "";
+            ageTextBox.Text = "";
         }
 
-        private void numeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void NumeTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
 
             if(e.KeyChar >= '0' && e.KeyChar <= '9')
@@ -65,7 +66,7 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void varstaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void VarstaTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -81,28 +82,27 @@ namespace WindowsFormsApp2
         {
             try
             {
-                if (numeTextBox.Text == "")
+                if (nameTextBox.Text == "")
                 {
                     MessageBox.Show("Fill the name text box.");
                 }
 
-                if (varstaTextBox.Text == "")
+                if (ageTextBox.Text == "")
                 {
                     MessageBox.Show("Fill the age text box.");
                 }
 
                 con.Open();
 
-                String nume = numeTextBox.Text;
+                String nume = nameTextBox.Text;
                 String gen = gender;
-                long varsta = Convert.ToInt64(varstaTextBox.Text);
+                long varsta = Convert.ToInt64(ageTextBox.Text);
 
-                proElite.adaugaElev(new Elev(nume, gen, varsta));
+                proElite.addStudent(new Student(nume, gen, varsta));
 
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into elev values('" + numeTextBox.Text + "' , '" +
-                                               gender + "' , '" + varstaTextBox.Text + "')";
+                cmd.CommandText = "insert into elev values('" + nameTextBox.Text + "' , '" + gender + "' , '" + ageTextBox.Text + "')";
 
                 cmd.ExecuteNonQuery();
 
@@ -110,7 +110,7 @@ namespace WindowsFormsApp2
 
                 Close();
 
-                parent.DisplayElev();
+                parent.DisplayStudent();
             }
             catch(Exception)
             {
@@ -118,14 +118,14 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void numeTextBox_Click(object sender, EventArgs e)
+        private void NumeTextBox_Click(object sender, EventArgs e)
         {
-            numeTextBox.Text = "";
+            nameTextBox.Text = "";
         }
 
-        private void varstaTextBox_Click(object sender, EventArgs e)
+        private void VarstaTextBox_Click(object sender, EventArgs e)
         {
-            varstaTextBox.Text = "";
+            ageTextBox.Text = "";
         }
 
     }

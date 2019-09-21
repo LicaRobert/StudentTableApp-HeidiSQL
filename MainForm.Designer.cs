@@ -28,133 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.adaugaElev = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stergeElev = new System.Windows.Forms.Button();
-            this.updateElev = new System.Windows.Forms.Button();
-            this.searchElev = new System.Windows.Forms.Button();
-            this.deleteAll = new System.Windows.Forms.Button();
-            this.displayBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.deleteBtn = new MetroFramework.Controls.MetroButton();
+            this.updateBtn = new MetroFramework.Controls.MetroButton();
+            this.searchBtn = new MetroFramework.Controls.MetroButton();
+            this.insertBtn = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
             // 
-            // adaugaElev
+            // metroGrid1
             // 
-            this.adaugaElev.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.adaugaElev.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adaugaElev.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.adaugaElev.Location = new System.Drawing.Point(13, 32);
-            this.adaugaElev.Name = "adaugaElev";
-            this.adaugaElev.Size = new System.Drawing.Size(99, 28);
-            this.adaugaElev.TabIndex = 0;
-            this.adaugaElev.Text = "Insert";
-            this.adaugaElev.UseVisualStyleBackColor = false;
-            this.adaugaElev.Click += new System.EventHandler(this.Adauga_Elev);
+            this.metroGrid1.AllowUserToAddRows = false;
+            this.metroGrid1.AllowUserToDeleteRows = false;
+            this.metroGrid1.AllowUserToOrderColumns = true;
+            this.metroGrid1.AllowUserToResizeColumns = false;
+            this.metroGrid1.AllowUserToResizeRows = false;
+            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.metroGrid1.EnableHeadersVisualStyles = false;
+            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.Location = new System.Drawing.Point(166, 32);
+            this.metroGrid1.MultiSelect = false;
+            this.metroGrid1.Name = "metroGrid1";
+            this.metroGrid1.ReadOnly = true;
+            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.metroGrid1.Size = new System.Drawing.Size(341, 248);
+            this.metroGrid1.TabIndex = 11;
+            this.metroGrid1.SelectionChanged += new System.EventHandler(this.MetroGrid1_SelectionChanged);
             // 
-            // dataGridView1
+            // deleteBtn
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(196, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(342, 209);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.deleteBtn.Location = new System.Drawing.Point(23, 133);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.TabIndex = 12;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseSelectable = true;
+            this.deleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // stergeElev
+            // updateBtn
             // 
-            this.stergeElev.BackColor = System.Drawing.Color.Red;
-            this.stergeElev.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stergeElev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.stergeElev.Location = new System.Drawing.Point(13, 83);
-            this.stergeElev.Name = "stergeElev";
-            this.stergeElev.Size = new System.Drawing.Size(99, 28);
-            this.stergeElev.TabIndex = 5;
-            this.stergeElev.Text = "Delete";
-            this.stergeElev.UseVisualStyleBackColor = false;
-            this.stergeElev.Click += new System.EventHandler(this.Button1_Click);
+            this.updateBtn.Location = new System.Drawing.Point(23, 190);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(75, 23);
+            this.updateBtn.TabIndex = 13;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseSelectable = true;
+            this.updateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
-            // updateElev
+            // searchBtn
             // 
-            this.updateElev.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.updateElev.ForeColor = System.Drawing.SystemColors.Control;
-            this.updateElev.Location = new System.Drawing.Point(13, 138);
-            this.updateElev.Name = "updateElev";
-            this.updateElev.Size = new System.Drawing.Size(99, 28);
-            this.updateElev.TabIndex = 6;
-            this.updateElev.Text = "Update";
-            this.updateElev.UseVisualStyleBackColor = false;
-            this.updateElev.Click += new System.EventHandler(this.Button2_Click);
+            this.searchBtn.Location = new System.Drawing.Point(23, 242);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.TabIndex = 14;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseSelectable = true;
+            this.searchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
-            // searchElev
+            // insertBtn
             // 
-            this.searchElev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.searchElev.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.searchElev.Location = new System.Drawing.Point(11, 192);
-            this.searchElev.Name = "searchElev";
-            this.searchElev.Size = new System.Drawing.Size(99, 28);
-            this.searchElev.TabIndex = 8;
-            this.searchElev.Text = "Search";
-            this.searchElev.UseVisualStyleBackColor = false;
-            this.searchElev.Click += new System.EventHandler(this.Button4_Click);
-            // 
-            // deleteAll
-            // 
-            this.deleteAll.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.deleteAll.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.deleteAll.Location = new System.Drawing.Point(11, 247);
-            this.deleteAll.Name = "deleteAll";
-            this.deleteAll.Size = new System.Drawing.Size(99, 28);
-            this.deleteAll.TabIndex = 9;
-            this.deleteAll.Text = "Delete All";
-            this.deleteAll.UseVisualStyleBackColor = false;
-            this.deleteAll.Click += new System.EventHandler(this.DeleteAll_Click);
-            // 
-            // displayBtn
-            // 
-            this.displayBtn.Location = new System.Drawing.Point(145, 252);
-            this.displayBtn.Name = "displayBtn";
-            this.displayBtn.Size = new System.Drawing.Size(75, 23);
-            this.displayBtn.TabIndex = 10;
-            this.displayBtn.Text = "Display";
-            this.displayBtn.UseVisualStyleBackColor = true;
-            this.displayBtn.Click += new System.EventHandler(this.displayBtn_Click);
+            this.insertBtn.Location = new System.Drawing.Point(23, 83);
+            this.insertBtn.Name = "insertBtn";
+            this.insertBtn.Size = new System.Drawing.Size(75, 23);
+            this.insertBtn.TabIndex = 16;
+            this.insertBtn.Text = "Insert";
+            this.insertBtn.UseSelectable = true;
+            this.insertBtn.Click += new System.EventHandler(this.InsertBtn_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 303);
-            this.Controls.Add(this.displayBtn);
-            this.Controls.Add(this.deleteAll);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.searchElev);
-            this.Controls.Add(this.updateElev);
-            this.Controls.Add(this.stergeElev);
-            this.Controls.Add(this.adaugaElev);
+            this.ClientSize = new System.Drawing.Size(532, 303);
+            this.Controls.Add(this.insertBtn);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.updateBtn);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.metroGrid1);
             this.Name = "MainForm";
-            this.Text = "Form";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Student tabel";
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button adaugaElev;
-        private System.Windows.Forms.Button stergeElev;
-        private System.Windows.Forms.Button updateElev;
-        private System.Windows.Forms.Button searchElev;
-        private System.Windows.Forms.Button deleteAll;
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button displayBtn;
+        public MetroFramework.Controls.MetroGrid metroGrid1;
+        private MetroFramework.Controls.MetroButton deleteBtn;
+        private MetroFramework.Controls.MetroButton updateBtn;
+        private MetroFramework.Controls.MetroButton searchBtn;
+        private MetroFramework.Controls.MetroButton insertBtn;
     }
 }
 

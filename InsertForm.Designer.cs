@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numeTextBox = new System.Windows.Forms.TextBox();
-            this.varstaTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.ageTextBox = new System.Windows.Forms.TextBox();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.okBtn = new System.Windows.Forms.Button();
             this.radioMaleButton = new System.Windows.Forms.RadioButton();
             this.radioFemaleButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // numeTextBox
+            // nameTextBox
             // 
-            this.numeTextBox.Location = new System.Drawing.Point(20, 27);
-            this.numeTextBox.Name = "numeTextBox";
-            this.numeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numeTextBox.TabIndex = 0;
-            this.numeTextBox.Text = "Nume";
-            this.numeTextBox.Click += new System.EventHandler(this.numeTextBox_Click);
-            this.numeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numeTextBox_KeyPress);
+            this.nameTextBox.Location = new System.Drawing.Point(20, 27);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.TabIndex = 0;
+            this.nameTextBox.Text = "Name";
+            this.nameTextBox.Click += new System.EventHandler(this.NumeTextBox_Click);
+            this.nameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumeTextBox_KeyPress);
             // 
-            // varstaTextBox
+            // ageTextBox
             // 
-            this.varstaTextBox.Location = new System.Drawing.Point(20, 71);
-            this.varstaTextBox.Name = "varstaTextBox";
-            this.varstaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.varstaTextBox.TabIndex = 2;
-            this.varstaTextBox.Text = "Varsta";
-            this.varstaTextBox.Click += new System.EventHandler(this.varstaTextBox_Click);
-            this.varstaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.varstaTextBox_KeyPress);
+            this.ageTextBox.Location = new System.Drawing.Point(20, 71);
+            this.ageTextBox.Name = "ageTextBox";
+            this.ageTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ageTextBox.TabIndex = 2;
+            this.ageTextBox.Text = "Age";
+            this.ageTextBox.Click += new System.EventHandler(this.VarstaTextBox_Click);
+            this.ageTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.VarstaTextBox_KeyPress);
             // 
             // cancelBtn
             // 
@@ -88,7 +88,7 @@
             this.radioMaleButton.TabStop = true;
             this.radioMaleButton.Text = "M";
             this.radioMaleButton.UseVisualStyleBackColor = true;
-            this.radioMaleButton.CheckedChanged += new System.EventHandler(this.radioMaleButton_CheckedChanged);
+            this.radioMaleButton.CheckedChanged += new System.EventHandler(this.RadioMaleButton_CheckedChanged);
             // 
             // radioFemaleButton
             // 
@@ -100,7 +100,7 @@
             this.radioFemaleButton.TabStop = true;
             this.radioFemaleButton.Text = "F";
             this.radioFemaleButton.UseVisualStyleBackColor = true;
-            this.radioFemaleButton.CheckedChanged += new System.EventHandler(this.radioFemaleButton_CheckedChanged);
+            this.radioFemaleButton.CheckedChanged += new System.EventHandler(this.RadioFemaleButton_CheckedChanged);
             // 
             // InsertForm
             // 
@@ -111,8 +111,8 @@
             this.Controls.Add(this.radioMaleButton);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.varstaTextBox);
-            this.Controls.Add(this.numeTextBox);
+            this.Controls.Add(this.ageTextBox);
+            this.Controls.Add(this.nameTextBox);
             this.Name = "InsertForm";
             this.Text = "Insert";
             this.ResumeLayout(false);
@@ -121,10 +121,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox varstaTextBox;
+        private System.Windows.Forms.TextBox ageTextBox;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button okBtn;
-        public System.Windows.Forms.TextBox numeTextBox;
+        public System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.RadioButton radioMaleButton;
         private System.Windows.Forms.RadioButton radioFemaleButton;
     }

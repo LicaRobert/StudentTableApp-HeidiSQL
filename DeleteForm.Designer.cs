@@ -30,10 +30,10 @@
         {
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.comboBoxNume = new System.Windows.Forms.ComboBox();
-            this.checkBoxNume = new System.Windows.Forms.CheckBox();
-            this.checkBoxVarsta = new System.Windows.Forms.CheckBox();
-            this.comboBoxVarsta = new System.Windows.Forms.ComboBox();
+            this.nameComboBox = new System.Windows.Forms.ComboBox();
+            this.nameCheckBox = new System.Windows.Forms.CheckBox();
+            this.ageCheckBox = new System.Windows.Forms.CheckBox();
+            this.ageComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnOK
@@ -58,53 +58,53 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // comboBoxNume
+            // nameComboBox
             // 
-            this.comboBoxNume.FormattingEnabled = true;
-            this.comboBoxNume.Location = new System.Drawing.Point(12, 29);
-            this.comboBoxNume.Name = "comboBoxNume";
-            this.comboBoxNume.Size = new System.Drawing.Size(160, 21);
-            this.comboBoxNume.TabIndex = 4;
+            this.nameComboBox.FormattingEnabled = true;
+            this.nameComboBox.Location = new System.Drawing.Point(12, 29);
+            this.nameComboBox.Name = "nameComboBox";
+            this.nameComboBox.Size = new System.Drawing.Size(160, 21);
+            this.nameComboBox.TabIndex = 4;
             // 
-            // checkBoxNume
+            // nameCheckBox
             // 
-            this.checkBoxNume.AutoSize = true;
-            this.checkBoxNume.Location = new System.Drawing.Point(14, 6);
-            this.checkBoxNume.Name = "checkBoxNume";
-            this.checkBoxNume.Size = new System.Drawing.Size(54, 17);
-            this.checkBoxNume.TabIndex = 5;
-            this.checkBoxNume.Text = "Nume";
-            this.checkBoxNume.UseVisualStyleBackColor = true;
-            this.checkBoxNume.CheckedChanged += new System.EventHandler(this.CheckBoxNume_CheckedChanged);
+            this.nameCheckBox.AutoSize = true;
+            this.nameCheckBox.Location = new System.Drawing.Point(14, 6);
+            this.nameCheckBox.Name = "nameCheckBox";
+            this.nameCheckBox.Size = new System.Drawing.Size(54, 17);
+            this.nameCheckBox.TabIndex = 5;
+            this.nameCheckBox.Text = "Name";
+            this.nameCheckBox.UseVisualStyleBackColor = true;
+            this.nameCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxNume_CheckedChanged);
             // 
-            // checkBoxVarsta
+            // ageCheckBox
             // 
-            this.checkBoxVarsta.AutoSize = true;
-            this.checkBoxVarsta.Location = new System.Drawing.Point(12, 56);
-            this.checkBoxVarsta.Name = "checkBoxVarsta";
-            this.checkBoxVarsta.Size = new System.Drawing.Size(56, 17);
-            this.checkBoxVarsta.TabIndex = 6;
-            this.checkBoxVarsta.Text = "Varsta";
-            this.checkBoxVarsta.UseVisualStyleBackColor = true;
-            this.checkBoxVarsta.CheckedChanged += new System.EventHandler(this.checkBoxVarsta_CheckedChanged);
+            this.ageCheckBox.AutoSize = true;
+            this.ageCheckBox.Location = new System.Drawing.Point(12, 56);
+            this.ageCheckBox.Name = "ageCheckBox";
+            this.ageCheckBox.Size = new System.Drawing.Size(45, 17);
+            this.ageCheckBox.TabIndex = 6;
+            this.ageCheckBox.Text = "Age";
+            this.ageCheckBox.UseVisualStyleBackColor = true;
+            this.ageCheckBox.CheckedChanged += new System.EventHandler(this.CheckBoxVarsta_CheckedChanged);
             // 
-            // comboBoxVarsta
+            // ageComboBox
             // 
-            this.comboBoxVarsta.FormattingEnabled = true;
-            this.comboBoxVarsta.Location = new System.Drawing.Point(14, 79);
-            this.comboBoxVarsta.Name = "comboBoxVarsta";
-            this.comboBoxVarsta.Size = new System.Drawing.Size(158, 21);
-            this.comboBoxVarsta.TabIndex = 7;
+            this.ageComboBox.FormattingEnabled = true;
+            this.ageComboBox.Location = new System.Drawing.Point(14, 79);
+            this.ageComboBox.Name = "ageComboBox";
+            this.ageComboBox.Size = new System.Drawing.Size(158, 21);
+            this.ageComboBox.TabIndex = 7;
             // 
             // DeleteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(184, 161);
-            this.Controls.Add(this.comboBoxVarsta);
-            this.Controls.Add(this.checkBoxVarsta);
-            this.Controls.Add(this.checkBoxNume);
-            this.Controls.Add(this.comboBoxNume);
+            this.Controls.Add(this.ageComboBox);
+            this.Controls.Add(this.ageCheckBox);
+            this.Controls.Add(this.nameCheckBox);
+            this.Controls.Add(this.nameComboBox);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Name = "DeleteForm";
@@ -119,9 +119,9 @@
 
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ComboBox comboBoxNume;
-        private System.Windows.Forms.CheckBox checkBoxNume;
-        private System.Windows.Forms.CheckBox checkBoxVarsta;
-        private System.Windows.Forms.ComboBox comboBoxVarsta;
+        private System.Windows.Forms.ComboBox nameComboBox;
+        private System.Windows.Forms.CheckBox nameCheckBox;
+        private System.Windows.Forms.CheckBox ageCheckBox;
+        private System.Windows.Forms.ComboBox ageComboBox;
     }
 }

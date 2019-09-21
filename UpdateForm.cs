@@ -8,22 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp2
 {
-    public partial class UpdateForm : Form
+    public partial class UpdateForm : MetroForm
     {
         MainForm parent;
 
         MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;Pwd=ProElite;database=elevVS");
+
+        string gender = "";
 
         public UpdateForm(MainForm p)
         {
             parent = p;
             InitializeComponent();
         }
-
 
         private void UpdateForm_Activated(object sender, EventArgs e)
         {
@@ -37,7 +39,7 @@ namespace WindowsFormsApp2
 
             updateListBox.DataSource = null;
             updateListBox.DataSource = dt;
-            updateListBox.DisplayMember = "Nume";
+            updateListBox.DisplayMember = "Name";
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -48,13 +50,12 @@ namespace WindowsFormsApp2
 
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update  elev set Nume = '" + numeTextBox.Text + "' , Gen =  '"
-                              + genTextBox.Text + "' , Varsta = '" + varstaTextBox.Text +
-                              "' where Nume = '" + numeText + "'";
+            cmd.CommandText = "update  elev set Name = '" + nameTextBox.Text + "' , Gender =  '"
+            + gender + "' , Age = '" + ageTextBox.Text +"' where Name = '" + numeText + "'";
           
             cmd.ExecuteNonQuery();
 
-            parent.DisplayElev();
+            parent.DisplayStudent();
 
             con.Close();
 
@@ -66,25 +67,31 @@ namespace WindowsFormsApp2
             Close();
         }
 
-        private void updateListBox_Click(object sender, EventArgs e)
+        private void UpdateListBox_Click(object sender, EventArgs e)
         {
             string numeText = updateListBox.GetItemText(updateListBox.SelectedItem);
-            numeTextBox.Text = numeText;
+            nameTextBox.Text = numeText;
         }
 
-        private void varstaTextBox_Click(object sender, EventArgs e)
+        private void VarstaTextBox_Click(object sender, EventArgs e)
         {
-            varstaTextBox.Text = "";
+            ageTextBox.Text = "";
         }
 
-        private void genTextBox_TextChanged(object sender, EventArgs e)
+
+        private void VarstaTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            genTextBox.Text = "";
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void genTextBox_Click(object sender, EventArgs e)
+        private void RadioBtnMale_CheckedChanged(object sender, EventArgs e)
         {
-            genTextBox.Text = "";
+            gender = "M";
+        }
+
+        private void RadioBtnFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "F";
         }
     }
 }
